@@ -10,22 +10,14 @@ $(document).ready(function() {
     });
 
     $("#email").on("keyup", function(){
-    	if($(this).val().length === 0) {
-    		$("img").show();
-    	} else {
-    		$("img").hide();
-    	}
-
-    	if($(this).val().length > 6) {
+    	if($(this).val().length <= 6) {
+    		$("img").show().attr("src","assets/images/2639.png");
+    	} else if($(this).val().length > 6 && $(this).val().length < 23) {
     		$("img").show().attr("src","assets/images/1f613.png");
-    	} else {
-    		$("img").show();
-    	}
-
-    	if($(this).val().length >= 23) {
+    	} else if($(this).val().length >= 23) {
     		$("img").show().attr("src","assets/images/263a.png");
     	} else {
-    		$("img").show();
+    		$("img").hide();
     	}
     });
 
