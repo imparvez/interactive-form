@@ -9,27 +9,25 @@ $(document).ready(function() {
         }
     });
 
-    $("#email").on("focus", function(){
-    	if($(this).val() === "") {
+    $("#email").on("keyup", function(){
+    	if($(this).val().length === 0) {
     		$("img").show();
     	} else {
     		$("img").hide();
     	}
-    })
 
-    $("#email").on("keyup", function(){
     	if($(this).val().length > 6) {
     		$("img").show().attr("src","assets/images/1f613.png");
     	} else {
     		$("img").show();
     	}
 
-    	if($(this).val().length === 23) {
+    	if($(this).val().length >= 23) {
     		$("img").show().attr("src","assets/images/263a.png");
     	} else {
     		$("img").show();
     	}
-    })
+    });
 
     $("input[type='submit']").on("click", function(){
     	if($("#name").val() === "") {
